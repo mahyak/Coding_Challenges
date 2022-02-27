@@ -1,0 +1,23 @@
+class Solution:
+    def countAndSay(self, n: int) -> str:
+        if n == 1:
+            return "1"
+        else:
+            return self.readSeq(self.countAndSay(n-1))
+            
+    def readSeq(self, s):
+        output = ""
+        prev = s[0]
+        prev_count = 0
+        
+        for x in range(len(s)):
+            if s[x] == prev:
+                prev_count += 1
+            else:
+                output += str(prev_count)
+                output += str(prev)
+                prev = s[x]
+                prev_count = 1
+        output += str(prev_count)
+        output += str(prev)
+        return output
