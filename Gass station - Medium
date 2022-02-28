@@ -10,5 +10,5 @@ class Solution:
             
             if surplus < 0:
                 surplus = 0
-                start += i
+                start = i + 1
         return -1 if (total_surplus<0) else start
