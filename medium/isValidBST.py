@@ -6,6 +6,16 @@
 #         self.right = right
 class Solution:
     def isValidBST(self, root: TreeNode) -> bool:
+        def validate(node, low = -math.inf, high = math.inf):
+            if not node:
+                return True
+            if node.val <= low or node.val >= high:
+                return False
+            return (validate(node.left, low, node.val) and validate(node.right, node.val, high))
+        return validate(root)
+                
+class Solution:
+    def isValidBST(self, root: TreeNode) -> bool:
         lst = self.inOrderTraverse(root)
         if lst == sorted(set(lst)):
             return True
