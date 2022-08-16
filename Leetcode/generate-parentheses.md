@@ -17,24 +17,15 @@ Output: ["()"]
 TimeComplexity: 
 
 ```python
-from collections import deque
-class Solution:
-    def generateParenthesis(self, n: int) -> List[str]:
-        q = deque()
-        for n in range(0, n):
-            if n == 0:
-                q.append('()')
-            else:   
-                length = len(q)
-                
-                while length>0:
-                    length -= 1
-                    value = q.popleft()
-                    if  '()' + value != value + '()':
-                        q.append(value + '()')
-                    q.append('()' + value)
-                    q.append('('+value+')')
-        return q
+class Solution(object):
+    def generateParenthesis(self, N):
+        if N == 0: return ['']
+        ans = []
+        for c in xrange(N):
+            for left in self.generateParenthesis(c):
+                for right in self.generateParenthesis(N-1-c):
+                    ans.append('({}){}'.format(left, right))
+        return ans
 ```           
                 
             
