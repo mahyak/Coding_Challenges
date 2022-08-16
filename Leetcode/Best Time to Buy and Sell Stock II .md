@@ -46,41 +46,6 @@ class Solution:
 #         return max_p
         
 #  O(n)
-        def maxProfit(self, prices: List[int]) -> int:
-            max_profit = 0
-            min_buy = 0xffffffff
-            for x in prices:
-                if x < min_buy:
-                    min_buy = x
-                elif x - min_buy > max_profit:
-                    max_profit = x - min_buy
-            return max_profit
-```
-
-
-
-```python
-# class Solution:
-#     def maxProfit(self, prices: List[int]) -> int:
-#         max_profit = 0
-#         length = len(prices) 
-#         for i in range(length):
-#             for j in range(i+1, length):
-#                 if prices[j] - prices [i] > 0:
-#                     current_profit = self.profit(prices[i:j+1]) + self.profit(prices[j+1:])
-#                     max_profit = current_profit if current_profit > max_profit else max_profit
-#         return max_profit
-        
-#     def profit(self, prices):
-#         if len(prices) < 2:
-#             return 0
-#         else:
-#             profit = 0
-#             for i in range(len(prices)):
-#                 for j in range(i+1, len(prices)):
-#                     if prices[j] - prices[i] > profit:
-#                         profit = prices[j] - prices[i]
-#             return profit
             
 class Solution(object):
     def maxProfit(self, prices):
