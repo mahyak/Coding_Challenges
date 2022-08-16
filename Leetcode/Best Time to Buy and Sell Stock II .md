@@ -59,7 +59,7 @@ class Solution:
 
 
 
-
+```python
 # class Solution:
 #     def maxProfit(self, prices: List[int]) -> int:
 #         max_profit = 0
@@ -96,3 +96,4 @@ class Solution(object):
                 tot += prices[i] - prices[i-1]
         return tot              
         
+```
