@@ -33,7 +33,7 @@ lRUCache.get(4);    // return 4
 
 Solution
 =========
-````
+
 solution1: we need fast lookups -> Hash Table and fast removals ->     
 doubly liked list to implement it we need dummy head and dummy tail
 since we only add to the front and remove from end then timecomplexity
@@ -41,7 +41,7 @@ is in constant time
 TimeComplexity: O(1)
 SpaceComplexity: O(n)
 solution2: Use Ordered Dict
-```
+
 ```python
 class LRUCache:
 
