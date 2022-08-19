@@ -60,9 +60,9 @@ pickIndex will be called at most 10000 times.
 
 Solution
 ========
+```python
 # O(N) for creation
 # O(N) for picking
-```python
 class Solution:
 
     def __init__(self, w: List[int]):
