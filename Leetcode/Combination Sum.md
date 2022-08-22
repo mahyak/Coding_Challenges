@@ -30,6 +30,8 @@ Output: []
 solution
 ========
 ```python
+# Time complexity is O(N^(T/M + 1))
+# Space complexity is O(T/M)
 class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
         if len(candidates) == 0:
